@@ -1,0 +1,45 @@
+﻿@model List<NineTest.People.Person>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Person</h2>
+
+<div>
+    <h4>Please select a race</h4>
+    @using (@Html.BeginForm("Index", "Person", FormMethod.Get))
+    {
+    @Html.DropDownList("Race", new SelectList(new List<string>() { "AnglesSaxons", "Jutes", "Hawaiian" }));
+    <input type="submit" value="Submit" />
+    }
+
+
+    <table style="width:50%">
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Age
+            </th>
+            <th>
+                Height
+            </th>
+            <th>
+                Race
+            </th>
+        </tr>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.Name</td>
+                <td>@p.Age</td>
+                <td>@p.Height</td>
+                <td>@p.Race</td>
+            </tr>
+        }
+        </table>
+    
+</div>
+
