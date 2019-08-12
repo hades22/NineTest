@@ -12,7 +12,7 @@ namespace NineTest.Controllers
     {
         private List<Person> persons = PeopleService.InitPeople();
         // GET: Person
-        public ActionResult Index(string race="all")
+        public ActionResult Index(string race="")
         {
             var list = PeopleService.GetRace(race, persons);
             return View(list);

@@ -49,7 +49,7 @@ namespace NineTest.Service
                 return personList.FindAll(p => p.Race == "Hawaiian" && p.Age % 2 == 0).OrderBy(p => p.Age).ToList();
             }
 
-            return personList;
+            return new List<Person>();
         }
 
         public static PeopleInfo GetInfo(List<Person> personList)
